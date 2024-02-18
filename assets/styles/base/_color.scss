@@ -1,0 +1,27 @@
+@use "../abstracts/color" as *;
+
+:root {
+  @each $theme, $color in $palette {
+    &[theme="#{$theme}"] {
+      @each $name, $variant in $color {
+        @each $key, $value in $variant {
+          --color-palette-#{$name}-#{$key}: #{$value};
+        }
+      }
+    }
+  }
+  @each $theme, $color in $text {
+    &[theme="#{$theme}"] {
+      @each $name, $value in $color {
+        --color-text-#{$name}: #{$value};
+      }
+    }
+  }
+  @each $theme, $color in $background {
+    &[theme="#{$theme}"] {
+      @each $name, $value in $color {
+        --color-background-#{$name}: #{$value};
+      }
+    }
+  }
+}

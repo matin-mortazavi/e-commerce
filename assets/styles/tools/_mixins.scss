@@ -1,0 +1,47 @@
+@use "../abstracts/breakpoints" as *;
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @if $size {
+    @media only screen and (max-width: $size) {
+      @content;
+    }
+  }
+}
+
+@mixin flex($dir: row, $wrap: nowrap, $align: flex-start, $justify: flex-start) {
+  display: flex !important;
+  flex-direction: $dir !important;
+  flex-wrap: $wrap !important;
+  align-items: $align !important;
+  justify-content: $justify !important;
+}
+@mixin w-h-100 {
+  width: 100%;
+  height: 100%;
+}
+
+@mixin hide-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  & * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+
+  & *::-ms-scrollbar {
+    display: none;
+  }
+
+  & * {
+    -ms-overflow-style: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  
+}
