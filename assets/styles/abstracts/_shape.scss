@@ -1,0 +1,12 @@
+//$border_radius: 8px; // old version
+/*-------------------------------------------*/
+$border-radius-root: 4px;
+$border-radius-xs: $border-radius-root / 2;
+$border-radius-sm: $border-radius-root * 1;
+$border-radius-md: $border-radius-root * 2; // using this option in the whole of project
+$border-radius-lg: $border-radius-root * 3;
+$border-radius-xl: $border-radius-root * 4;
+$border-radius-xxl: $border-radius-root * 6;
+$border-radius-xxxl: $border-radius-root * 7;
+$pill: 9999px;
+$circle: 50%;

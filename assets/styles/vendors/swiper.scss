@@ -1,0 +1,50 @@
+@use "../abstracts" as *;
+@use "../tools" as *;
+
+.swiper-button-next,
+.swiper-button-prev {
+  @include flex(row, nowrap, center, center);
+  width: 40px !important;
+  height: 40px !important;
+  background-color: var(--color-text-50);
+  background-size: 20px;
+  border-radius: $circle;
+  transition: opacity 0.2s ease;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.swiper-button-next {
+  background-image: url("../../../public/assets/svgs/swiper.arrow-left.svg") !important;
+  left: 0px !important;
+  top: calc(50% - 20px) !important;
+}
+.swiper-button-prev {
+  background-image: url("../../../public/assets/svgs/swiper.arrow-right.svg") !important;
+  right: 0px !important;
+  top: calc(50% - 20px) !important;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-pagination-bullet {
+  transition: all 250ms ease-in-out !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: 0 space(3) !important;
+}
+.swiper-pagination-bullet-active {
+  width: 24px !important;
+  border-radius: $border-radius-sm !important;
+  background-color: var(--color-text-400) !important;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -10px !important;
+  padding: space(5) !important;
+}
+
