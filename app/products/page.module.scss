@@ -5,6 +5,8 @@
   gap: space(16);
   &__products-list {
     width: 70%;
+    @include flex(row, wrap, center, space-between);
+    gap: spcae(5);
   }
   &__filters {
     width: 30%;

@@ -1,0 +1,23 @@
+.product {
+  height: 400px;
+  width: 350px;
+  margin-bottom: space(15);
+  background-color: var(--color-palette-primary-50);
+  padding: space(8);
+
+  &__img {
+    margin: 0 auto;
+    width: 80%;
+    height: 230px;
+  }
+  &__price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: space(8) 0;
+  }
+  &__description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
