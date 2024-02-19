@@ -1,23 +1,41 @@
 .product {
-  height: 400px;
+  height: 480px;
   width: 350px;
+  border-radius: $border-radius-xxl;
+  overflow: hidden;
+  box-shadow: $box-shadow;
   margin-bottom: space(15);
   background-color: var(--color-palette-primary-50);
-  padding: space(8);
+  @include flex(column, nowrap, center, space-between);
 
+  &__details {
+    width: 100%;
+    height: 100%;
+    padding: space(8);
+
+    @include flex(column, nowrap, center, flex-start);
+  }
+  &__title {
+    padding: space(8) 0;
+  }
   &__img {
     margin: 0 auto;
-    width: 80%;
-    height: 230px;
+    width: 100%;
+    min-height: 200px;
   }
   &__price {
     font-weight: 600;
     font-size: 1.1rem;
-    margin: space(8) 0;
+    align-self: flex-start;
   }
   &__description {
+    width: 100%;
+    margin: space(8) 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  &__btn {
+    margin: space(8) 0;
   }
 }

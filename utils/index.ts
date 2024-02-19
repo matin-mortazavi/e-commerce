@@ -1,1 +1,1 @@
-export const toUpdateImageUrl = (url: string) => url.replace(/[\[\]"]+/g, '');;
+export const toUpdateImageUrl = (url: string) => url.replace(/[\[\]"]+/g, "");

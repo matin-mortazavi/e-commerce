@@ -1,0 +1,166 @@
+.btn {
+  position: relative;
+  height: 44px;
+  padding: space(5) space(5);
+  border-radius: $border-radius-xxl;
+  line-height: 1.5;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  @include flex(row, nowrap, center, center);
+  @include mq(md) {
+    height: 36px;
+  }
+  &__contained-primary {
+    background-color: var(--color-palette-primary-main);
+    color: var(--color-palette-primary-contrastText);
+    &--md {
+      padding: space(13) 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+      @include mq(xl) {
+        padding: space(12) 0;
+      }
+    }
+    &--ellipsis-mode {
+      width: 80px;
+      white-space-collapse: collapse;
+      text-overflow: ellipsis;
+      white-space: wrap;
+      overflow: hidden;
+      line-height: 1.52rem;
+      height: 62.5px;
+      @include flex(row, nowrap, start, start);
+      &:hover {
+        width: 160px !important;
+        text-overflow: unset !important;
+      }
+    }
+
+    &:hover {
+      background-color: var(--color-palette-primary-dark);
+    }
+    &:disabled {
+      background-color: var(--color-text-disabled);
+      color: var(--color-text-focus);
+      cursor: default;
+    }
+  }
+  &__contained-secondary {
+    background-color: var(--color-palette-secondary-main);
+    color: var(--color-palette-secondary-contrastText);
+
+    &:hover {
+      background-color: var(--color-palette-secondary-dark);
+    }
+    &:disabled {
+      background-color: var(--color-palette-secondary-light);
+      cursor: default;
+    }
+  }
+  &__text {
+    color: var(--color-text-400);
+
+    &--inherit {
+      background-color: inherit;
+      color: inherit;
+    }
+    &-primary {
+      background-color: transparent;
+      color: rgba($color: #000, $alpha: 0.68);
+
+      &:hover {
+        background-color: rgba(
+          $color: var(--color-palette-primary-light),
+          $alpha: 0.1
+        );
+        color: var(--color-text-900);
+      }
+      &:disabled {
+        cursor: default;
+      }
+    }
+    &-secondary {
+      background-color: transparent;
+      color: var(--color-palette-primary-700);
+
+      & path {
+        stroke: var(--color-palette-primary-700);
+        transition: all 250ms ease-in-out;
+      }
+      &:hover {
+        color: var(--color-palette-primary-900);
+
+        & path {
+          stroke: var(--color-palette-primary-900);
+          transition: all 250ms ease-in-out;
+        }
+      }
+      &:disabled {
+        cursor: default;
+      }
+    }
+  }
+  &__outlined {
+    &-primary {
+      background-color: inherit;
+      border: 1px solid var(--color-text-900);
+
+      &:hover {
+        background-color: var(--color-palette-primary-main);
+        color: var(--color-palette-primary-contrastText);
+        border: 1px solid var(--color-palette-primary-main);
+      }
+      &:disabled {
+        background-color: inherit;
+        cursor: default;
+      }
+    }
+    &-secondary {
+      background-color: inherit;
+      color: var(--color-palette-secondary-contrastText);
+      border: 1px solid var(--color-palette-secondary-main);
+
+      &:hover {
+        background-color: var(--color-palette-secondary-light);
+      }
+      &:disabled {
+        background-color: inherit;
+        cursor: default;
+      }
+    }
+  }
+
+  &__elevation {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  }
+  &__icon {
+    &-start {
+      @include flex(row, nowrap, center, center);
+      color: inherit;
+    }
+    &-end {
+      @include flex(row, nowrap, center, center);
+      color: inherit;
+    }
+  }
+  &__children {
+    padding: 0 8px;
+  }
+  &__block {
+    width: 100%;
+  }
+  &__danger {
+    background-color: var(--color-palette-error-500);
+    color: var(--color-text-contrastText);
+
+    &:hover {
+      background-color: var(--color-palette-error-700);
+    }
+    &:disabled {
+      background-color: var(--color-palette-error-300);
+      color: var(--color-text-disabled);
+      cursor: default;
+    }
+  }
+}
