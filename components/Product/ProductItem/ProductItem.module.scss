@@ -1,10 +1,10 @@
 .product {
   height: 480px;
-  width: 350px;
+  width: 300px;
   border-radius: $border-radius-xxl;
   overflow: hidden;
+  margin: 0 space(8) space(15) space(8);
   box-shadow: $box-shadow;
-  margin-bottom: space(15);
   background-color: var(--color-palette-primary-50);
   @include flex(column, nowrap, center, space-between);
 

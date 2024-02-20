@@ -23,3 +23,7 @@ export interface BtnComponentType {
   elevation?: boolean;
   isComponentDisable?: boolean;
 }
+export interface checkBoxFilterType {
+  id: number;
+  name: string;
+}

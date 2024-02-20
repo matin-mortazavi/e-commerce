@@ -1,14 +1,13 @@
 .products {
-  @include flex(row, nowrap, center, space-between);
+  @include flex(row, nowrap, flex-start, space-between);
   margin: 0 auto;
   width: 90%;
   gap: space(16);
   &__products-list {
-    width: 70%;
-    @include flex(row, wrap, center, space-between);
-    gap: spcae(5);
+    width: 80%;
+    @include flex(row, wrap, flex-start, flex-start);
   }
   &__filters {
-    width: 30%;
+    width: 20%;
   }
 }

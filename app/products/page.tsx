@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./page.module.scss";
 import { productUseCase } from "@/useCases";
 import { getProductsType, productItemType } from "@/types/product.type";
-import { ProductItem } from "@/components/Product";
+import { Filters, ProductItem } from "@/components/Product";
+import categoryUseCase from "@/useCases/category.useCase";
 const Products = async ({ searchParams }: getProductsType) => {
   const products = await productUseCase.getProducts(searchParams);
+  const categories = await categoryUseCase.getCategories();
 
   return (
     <section className={styles.products}>
@@ -14,7 +16,9 @@ const Products = async ({ searchParams }: getProductsType) => {
         ))}
       </div>
 
-      <div className={styles["products__filters"]}></div>
+      <div className={styles["products__filters"]}>
+        <Filters categories={categories} />
+      </div>
     </section>
   );
 };

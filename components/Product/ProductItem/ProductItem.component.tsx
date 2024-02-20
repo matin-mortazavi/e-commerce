@@ -2,9 +2,8 @@ import { productItemType } from "@/types/product.type";
 import React from "react";
 import styles from "./ProductItem.module.scss";
 import { Btn, Img } from "@/components/Common";
-import { toUpdateImageUrl } from "@/utils";
+
 const ProductItem: React.FC<{ product: productItemType }> = ({ product }) => {
-  console.log(product?.images?.[0]);
 
   return (
     <div className={styles.product}>

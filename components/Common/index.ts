@@ -4,4 +4,6 @@ export { default as Img } from "./Img/Img.component";
 export { default as NextLink } from "./NextLink/NextLink.component";
 export { default as Loading } from "./Loading/Loading.component";
 export { default as Btn } from "./Btn/Btn.component";
+export { default as CheckBox } from "./CheckBox/CheckBox.component";
+
 
