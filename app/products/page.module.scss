@@ -1,0 +1,12 @@
+.products {
+  @include flex(row, nowrap, center, space-between);
+  margin: 0 auto;
+  width: 90%;
+  gap: space(16);
+  &__products-list {
+    width: 70%;
+  }
+  &__filters {
+    width: 30%;
+  }
+}
