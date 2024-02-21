@@ -2,6 +2,7 @@
 import { BtnComponentType } from "@/types/common.type";
 import React, { useCallback, useMemo } from "react";
 import styles from "./Btn.module.scss";
+import { NextLink } from "..";
 const Btn: React.FC<BtnComponentType> = ({
   as = "button",
   type = "button",

@@ -2,19 +2,29 @@
 
 import React, { useEffect, useState } from "react";
 import styles from "./Filters.module.scss";
-import { CategoryFilter, SliderFilter } from "@/components/Product";
-import { useRouter } from "next/router";
+import {  SliderFilter } from "@/components/Product";
+
 import { useNextRouter } from "@/hooks";
 import { searchParamsService } from "@/services";
 import CheckBoxFilter from "../CheckBoxFilter/CheckBoxFilter";
-const Filters = ({ categories, highestPrice }) => {
+
+interface FilterChangeProps {
+  checked: boolean;
+  name: string;
+  filterName: string;
+}
+interface FiltersProps {
+  categories: [];
+  highestPrice: number;
+}
+const Filters = ({ categories, highestPrice }: FiltersProps) => {
   const router = useNextRouter();
   const [maxPrice, setMaxPrice] = useState(highestPrice);
   const [filterPriceValues, setFilterPriceValues] = useState([0, 0]);
-  const onPriceFilterChange = (value) =>
+  const onPriceFilterChange = (value : number[]) =>
     setFilterPriceValues([value[0], value[1]]);
 
-  const onFilterChange = ({ checked, name, filterName }) => {
+  const onFilterChange = ({ checked , name, filterName } : FilterChangeProps) => {
     if (checked) {
       const params = searchParamsService.toUpdateSearchParam([
         { key: filterName, value: name },

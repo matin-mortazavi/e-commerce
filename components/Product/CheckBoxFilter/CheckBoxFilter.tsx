@@ -19,7 +19,8 @@ const CheckBoxFilter = ({ filterName, options, onFilterChange }) => {
         {options.map((item: checkBoxFilterType) => (
           <li
             className={clsx(styles["check-box-filter__item"], {
-              [styles["check-box-filter__item--active"]]: checkedItem === item?.name,
+              [styles["check-box-filter__item--active"]]:
+                checkedItem === item?.name,
             })}
           >
             <CheckBox

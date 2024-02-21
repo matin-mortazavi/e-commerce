@@ -24,15 +24,19 @@ export interface BtnComponentType {
   isComponentDisable?: boolean;
 }
 export interface checkBoxFilterType {
-  checkedItem: string | number;
+  checkedItem: string | number | null;
   name: string;
-  onCheckBoxChange: (e: {}) => {};
+  onCheckBoxChange: () => {
+    checked: boolean;
+    name: string;
+    filterName: string;
+  };
 }
 
 export interface sliderFilterType {
-  name: string;
+  name?: string;
   maxValue: number;
   minValue?: number;
-  onSliderChange?: () => {};
-  values: [];
+  onSliderChange?: (value: number[]) => void;
+  values: number[];
 }
