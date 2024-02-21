@@ -1,0 +1,11 @@
+.check-box {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  padding: space(4);
+  &:checked {
+    appearance: unset;
+    background-color: var(--color-palette-primary-main);
+  }
+}

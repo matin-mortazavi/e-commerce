@@ -1,11 +1,22 @@
-import { getProductsType } from "@/types/repository.type";
+import { getProductsType } from "@/types/product.type";
 import { productMapper as mapper } from "@/mappers";
 import { productRepository } from "@/repositories";
 const getProducts = async (prop: getProductsType) => {
-  const payload = mapper.toUpdateGetProductsPayload(prop);
-  const res = await productRepository.getProducts(payload);
-  const data = await res.json();
-  return data;
+  try {
+    const payload = mapper.toUpdateGetProductsPayload(prop);
+    const res = await productRepository.getProducts(payload);
+    const products = await res.json();
+    let prices = [];
+
+    products.map((item) => {
+      prices.push(item.price);
+    });
+    const highestPrice = Math.max(...prices);
+
+    return { products, highestPrice };
+  } catch (error) {
+    console.error("error");
+  }
 };
 
 export default {
