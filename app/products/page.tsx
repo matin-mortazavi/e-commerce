@@ -5,7 +5,9 @@ import { getProductsType, productItemType } from "@/types/product.type";
 import { Filters, ProductItem } from "@/components/Product";
 import categoryUseCase from "@/useCases/category.useCase";
 const Products = async ({ searchParams }: getProductsType) => {
-  const products = await productUseCase.getProducts(searchParams);
+  const { products, highestPrice } = await productUseCase.getProducts(
+    searchParams
+  );
   const categories = await categoryUseCase.getCategories();
 
   return (
@@ -17,7 +19,7 @@ const Products = async ({ searchParams }: getProductsType) => {
       </div>
 
       <div className={styles["products__filters"]}>
-        <Filters categories={categories} />
+        <Filters highestPrice={highestPrice} categories={categories} />
       </div>
     </section>
   );

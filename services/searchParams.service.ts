@@ -1,7 +1,7 @@
 export default {
-  toUpdateSearchParam: (key: string, value: string) => {
+  toUpdateSearchParam: (arr: { key: string; value: string | number }[]) => {
     const searchParams = new URLSearchParams(window.location.search);
-    searchParams.set(key, value);
+    arr.map((obj) => searchParams.set(obj.key, obj.value));
     return searchParams;
   },
   toRemoveSearchParam: (key: string) => {

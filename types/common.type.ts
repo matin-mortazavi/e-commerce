@@ -24,6 +24,15 @@ export interface BtnComponentType {
   isComponentDisable?: boolean;
 }
 export interface checkBoxFilterType {
-  id: number;
+  checkedItem: string | number;
   name: string;
+  onCheckBoxChange: (e: {}) => {};
+}
+
+export interface sliderFilterType {
+  name: string;
+  maxValue: number;
+  minValue?: number;
+  onSliderChange?: () => {};
+  values: [];
 }

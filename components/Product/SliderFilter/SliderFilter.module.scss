@@ -1,0 +1,105 @@
+.slider {
+  height: 300px;
+  box-shadow: $box-shadow;
+  margin: space(16) 0;
+
+  padding: space(12);
+}
+.filter-section {
+  &__header-icon {
+    transition: all 0.3s ease;
+  }
+  &__header-icon--rotated {
+    transform: rotate(180deg);
+  }
+  &__item {
+    padding: space(5);
+    border: 0.5px solid var(--color-text-100);
+    border-radius: $border-radius-xl;
+    @include flex(row, nowrap, center, center);
+    margin-bottom: space(10);
+  }
+  &__header {
+    @include flex(row, nowrap, center, space-between);
+    width: 100%;
+  }
+  &__header-text {
+    @include flex(row, nowrap, center, space-between);
+    span {
+      margin-inline-end: space(4);
+    }
+  }
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__select {
+    margin-top: space(10);
+    width: 90%;
+    padding: space(5) space(10);
+    border: none;
+    outline: none;
+    background-color: var(--color-text-50);
+    border-radius: $border-radius-xl;
+    margin: 0 auto;
+  }
+  &__row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__range-btn {
+    width: 100%;
+    margin-top: space(10);
+    @include flex(row, nowrap, center, center);
+  }
+  & p {
+    margin: 0;
+  }
+  &__row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__range-counts {
+    padding-top: space(5);
+    width: 100%;
+    @include flex(row, nowrap, center, space-between);
+    position: relative;
+    &::after {
+      content: "تومان";
+      font-size: 0.8rem;
+      padding: space(10) 0;
+      z-index: 999;
+      position: absolute;
+      top: calc(50% - space(12));
+      right: calc(50% - 2.5rem);
+    }
+    &::before {
+      content: "تومان";
+      font-size: 0.8rem;
+      padding: space(10) 0;
+      z-index: 999;
+      position: absolute;
+      top: calc(50% - 25px);
+      left: 0.8rem;
+    }
+  }
+  &__range-count {
+    margin: 0 space(3);
+    border: none;
+    background-color: var(--color-text-50);
+    border-radius: $border-radius-xxl;
+    width: 50%;
+    position: relative;
+    text-align: center;
+    padding: space(3);
+  }
+}

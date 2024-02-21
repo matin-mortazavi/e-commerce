@@ -1,1 +1,10 @@
-{"version":3,"sources":["react-select.scss","react-select.css"],"names":[],"mappings":"AACE;EACE,WAAA;ACAJ;ADEE;EACE,2BAAA;ACAJ","file":"react-select.css"}
+{
+  "version": 3,
+  "sources": [
+    "react-select.scss",
+    "react-select.css"
+  ],
+  "names": [],
+  "mappings": "AACE;EACE,WAAA;ACAJ;ADEE;EACE,2BAAA;ACAJ",
+  "file": "react-select.css"
+}

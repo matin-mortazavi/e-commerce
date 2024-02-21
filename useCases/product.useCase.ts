@@ -5,8 +5,15 @@ const getProducts = async (prop: getProductsType) => {
   try {
     const payload = mapper.toUpdateGetProductsPayload(prop);
     const res = await productRepository.getProducts(payload);
-    const data = await res.json();
-    return data;
+    const products = await res.json();
+    let prices = [];
+
+    products.map((item) => {
+      prices.push(item.price);
+    });
+    const highestPrice = Math.max(...prices);
+
+    return { products, highestPrice };
   } catch (error) {
     console.error("error");
   }
