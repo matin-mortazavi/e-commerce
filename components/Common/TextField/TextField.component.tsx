@@ -1,9 +1,36 @@
-import { forwardRef, useCallback, useMemo } from "react";
+import React, {
+  forwardRef,
+  useCallback,
+  useMemo,
+  ReactNode,
+  Ref,
+  LegacyRef,
+  RefAttributes,
+  ForwardRefExoticComponent,
+} from "react";
 
 import { Loading } from "@/components/Common";
 import styles from "./TextField.module.scss";
 
-const TextField = forwardRef(
+export interface textFieldType {
+  textarea: boolean;
+  type: string;
+  name: string;
+  label?: string;
+  error?: string;
+  noError?: boolean;
+  noLabel?: boolean;
+  startIcon?: ReactNode;
+  endIcon?: ReactNode;
+  loading?: boolean;
+  className?: {};
+  ref?: LegacyRef<any>;
+  rest: any;
+}
+
+const TextField: ForwardRefExoticComponent<
+  Omit<textFieldType, "ref"> & RefAttributes<any> & textFieldType
+> = forwardRef(
   (
     {
       textarea = false,
@@ -19,7 +46,7 @@ const TextField = forwardRef(
       className,
       ...rest
     },
-    ref,
+    ref
   ) => {
     const Label = useCallback(
       () =>
@@ -28,17 +55,25 @@ const TextField = forwardRef(
             {label}
           </label>
         ),
-      [label, noLabel, name],
+      [label, noLabel, name]
     );
 
     const StartIcon = useCallback(
-      () => (startIcon && <div className={styles["text-field__start-icon"]}>{startIcon}</div>) || "",
-      [startIcon],
+      () =>
+        (startIcon && (
+          <div className={styles["text-field__start-icon"]}>{startIcon}</div>
+        )) ||
+        "",
+      [startIcon]
     );
 
     const EndIcon = useMemo(
-      () => (endIcon && <div className={styles["text-field__end-icon"]}>{endIcon}</div>) || "",
-      [endIcon],
+      () =>
+        (endIcon && (
+          <div className={styles["text-field__end-icon"]}>{endIcon}</div>
+        )) ||
+        "",
+      [endIcon]
     );
 
     const LoadingComponent = useCallback(
@@ -49,10 +84,13 @@ const TextField = forwardRef(
           </div>
         )) ||
         "",
-      [loading],
+      [loading]
     );
 
-    const Hint = useCallback(() => (error && <div className={styles.hint}>{error}</div>) || "", [error]);
+    const Hint = useCallback(
+      () => (error && <div className={styles.hint}>{error}</div>) || "",
+      [error]
+    );
 
     return (
       <div className={[styles["text-field"], className].join(" ")}>
@@ -85,15 +123,14 @@ const TextField = forwardRef(
             />
           )}
           {EndIcon}
-          <LoadingComponent />
+          {LoadingComponent()}
         </div>
-        <Hint />
+        {Hint()}
       </div>
     );
-  },
+  }
 );
 
 TextField.displayName = "TextField";
 
 export default TextField;
-
