@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html theme="light" lang="en">
-      <body>
+      <body style={{ overflowX: "hidden" }}>
         <Header />
         {children}
         <Footer />

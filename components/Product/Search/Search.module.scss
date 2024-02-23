@@ -1,5 +1,5 @@
 .search {
-  position: relative;
+  scroll-behavior: contain !important;
 
   &__input {
     width: 250px;
@@ -8,11 +8,37 @@
   &__overlay {
     &--active {
       position: absolute;
-      top: 50px;
+      top: 100px;
+      left: 0;
       z-index: $drawer;
       width: 100vw;
       height: calc(100vh - 50px);
       background-color: #00000041;
     }
+  }
+
+  &__list {
+    position: absolute;
+    top: 100px;
+    z-index: $modal;
+    background-color: var(--color-background-default);
+    width: 25vw;
+    left: 0;
+    padding: space(8);
+    border-radius: $border-radius-xl;
+    max-height: 500px;
+    overflow-y: scroll;
+    overscroll-behavior: contain !important;
+  }
+}
+
+.product {
+  @include flex(row, nowrap, center, space-between);
+  padding: space(8) space(16);
+  border-bottom: 1px solid var(--color-text-50);
+
+  &__img {
+    width: 100px;
+    height: 100px;
   }
 }
