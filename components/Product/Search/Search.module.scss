@@ -1,0 +1,18 @@
+.search {
+  position: relative;
+
+  &__input {
+    width: 250px;
+    border-radius: $border-radius-xxl;
+  }
+  &__overlay {
+    &--active {
+      position: absolute;
+      top: 50px;
+      z-index: $drawer;
+      width: 100vw;
+      height: calc(100vh - 50px);
+      background-color: #00000041;
+    }
+  }
+}

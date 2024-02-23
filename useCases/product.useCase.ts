@@ -3,7 +3,7 @@ import { productMapper as mapper } from "@/mappers";
 import { productRepository } from "@/repositories";
 const getProducts = async (prop: getProductsType) => {
   try {
-    const payload = mapper.toUpdateGetProductsPayload(prop);
+    const payload = mapper.toUpdateProductsPayload(prop);
     const res = await productRepository.getProducts(payload);
     const products = await res.json();
     let prices = [];
@@ -19,6 +19,21 @@ const getProducts = async (prop: getProductsType) => {
   }
 };
 
+const searchProducts = async (title: string) => {
+
+  try {
+    const payload = mapper.toUpdateProductsPayload({ title });
+
+    const res = await productRepository.searchProducts(payload);
+    const products = await res.json();
+
+    return products;
+  } catch (error) {
+    console.error("error");
+  }
+};
+
 export default {
   getProducts,
+  searchProducts,
 };
