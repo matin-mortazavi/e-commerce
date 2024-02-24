@@ -33,6 +33,7 @@ export default async function Home() {
 
       <CustomBanner link="/products" title="start jurny" />
       <CustomBanner link="/products" title="view our blog" />
+      <CustomBanner link="/products" title="view our blog" />
     </main>
   );
 }

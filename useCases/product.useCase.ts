@@ -23,7 +23,6 @@ const getDiscountedProducts = async () => {
     const payload = mapper.toUpdateProductsPayload({});
     const res = await productRepository.getProducts(payload);
     const data = await res.json();
-    console.log(data);
     const discountedProducts = data.filter((item) => item.price < 100);
 
     return discountedProducts;
@@ -37,7 +36,6 @@ const searchProducts = async (title: string) => {
     const payload = mapper.toUpdateProductsPayload({ title });
 
     const res = await productRepository.searchProducts(payload);
-    console.log(res);
 
     const products = await res.json();
 
