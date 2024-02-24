@@ -1,0 +1,1 @@
+export {default as Introducation} from "./Introducation/Introducation.component"

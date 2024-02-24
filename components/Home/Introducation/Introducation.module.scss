@@ -1,5 +1,39 @@
 .introducation {
-  background-color: var(--color-text-50);
+  background-color: var(--color-palette-primary-50);
   height: 70vh;
   width: 100%;
+  margin-top: -30px;
+  &__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    @include flex(row, nowrap, center, space-between);
+    height: 100%;
+  }
+  &__details {
+    position: relative;
+    z-index: $appBar;
+    height: 100%;
+    @include flex(column, nowrap, flex-start, center);
+  }
+  &__title {
+    color: var(--color-background-default);
+    text-transform: uppercase;
+  }
+  &__description {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-background-default);
+  }
+  &__img-wrapper {
+    position: absolute;
+    height: 500px;
+    width: 500px;
+    z-index: -1;
+    left: -15%;
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+  }
 }
