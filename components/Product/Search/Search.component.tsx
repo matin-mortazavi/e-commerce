@@ -60,7 +60,7 @@ const Search = () => {
           [styles["search__overlay--active"]]: isOverlayOpen,
         })}
       ></div>
-      {products.length ? (
+      {products.length && isOverlayOpen ? (
         <div className={styles.search__list}>
           {products.map((item) => (
             <ProductItem key={item.id} product={item} />
