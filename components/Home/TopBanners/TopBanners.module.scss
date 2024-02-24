@@ -1,0 +1,14 @@
+.banner {
+  &__wrapper {
+    @include flex(row, nowrap, center, space-between);
+    margin: 0 auto;
+    width: 80%;
+  }
+  &__img {
+    width: calc(100%);
+    height: 250px;
+    margin: space(16);
+    border-radius: $border-radius-md;
+   
+  }
+}

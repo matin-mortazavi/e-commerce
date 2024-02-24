@@ -32,11 +32,18 @@ const CategoryItem: React.FC<categoryItemType> = ({ category }) => (
     </div>
   </div>
 );
-const CategorySlider = ({ categories }) => {
-  console.log();
 
+interface categorySlider {
+  categories: [categoryItemType];
+  title?: string;
+}
+const CategorySlider: React.FC<categorySlider> = ({
+  categories,
+  title = "Categories",
+}) => {
   return (
     <div className={styles["category-slider"]}>
+      <span className={styles["category-slider__title"]}>{title}</span>
       <div className={styles["category-slider__wrapper"]}>
         <Slider settings={sliderSettings}>
           {categories?.map((item, key) => (
