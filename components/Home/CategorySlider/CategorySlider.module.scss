@@ -1,0 +1,36 @@
+.category-slider {
+  height: 600px;
+  background-color: var(--color-text-50);
+  @include flex(row, nowrap, center, center);
+  &__wrapper {
+    width: 75%;
+  }
+}
+
+.category {
+  height: 170px;
+  width: 400px;
+  border-radius: $border-radius-md;
+  background-color: var(--color-palette-primary-main);
+  @include flex(row, nowrap, center, space-between);
+  width: 100%;
+  margin-bottom: space(16);
+  padding: space(8) space(16);
+
+  &__details {
+    @include flex(column, nowrap, center, center);
+    color: var(--color-background-default);
+  }
+  &__title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: space(4);
+  }
+
+  &__img {
+    width: 120px;
+    height: 120px;
+    border-radius: $circle;
+    overflow: hidden;
+  }
+}
