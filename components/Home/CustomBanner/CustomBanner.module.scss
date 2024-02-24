@@ -1,0 +1,12 @@
+.banner {
+  width: 80%;
+  height: 300px;
+  position: relative;
+  border-radius: $border-radius-xl;
+  margin: 0 auto;
+  &__btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+}

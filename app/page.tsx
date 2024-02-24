@@ -1,5 +1,6 @@
 import {
   CategorySlider,
+  CustomBanner,
   Introducation,
   ProductSlider,
   TopBanners,
@@ -29,6 +30,9 @@ export default async function Home() {
         products={discountedProducts}
         title="Discounted Products"
       />
+
+      <CustomBanner link="/products" title="start jurny" />
+      <CustomBanner link="/products" title="view our blog" />
     </main>
   );
 }
