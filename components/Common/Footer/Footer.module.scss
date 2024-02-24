@@ -1,0 +1,41 @@
+/* Footer.module.scss */
+.footer {
+  margin-top: space(24);
+  background-color: #222;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.info {
+  flex: 1;
+  max-width: 400px;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.social {
+  font-size: 1.5em;
+}
+
+.socialIcon {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #3498db;
+  }
+}
