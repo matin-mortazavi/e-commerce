@@ -18,13 +18,27 @@ const getProducts = async (prop: getProductsType) => {
     console.error("error");
   }
 };
+const getDiscountedProducts = async () => {
+  try {
+    const payload = mapper.toUpdateProductsPayload({});
+    const res = await productRepository.getProducts(payload);
+    const data = await res.json();
+    console.log(data);
+    const discountedProducts = data.filter((item) => item.price < 100);
+
+    return discountedProducts;
+  } catch (error) {
+    console.error("error");
+  }
+};
 
 const searchProducts = async (title: string) => {
-
   try {
     const payload = mapper.toUpdateProductsPayload({ title });
 
     const res = await productRepository.searchProducts(payload);
+    console.log(res);
+
     const products = await res.json();
 
     return products;
@@ -35,5 +49,6 @@ const searchProducts = async (title: string) => {
 
 export default {
   getProducts,
+  getDiscountedProducts,
   searchProducts,
 };

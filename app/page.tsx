@@ -1,14 +1,18 @@
-import { CategorySlider, Introducation, TopBanners } from "@/components/Home";
+import {
+  CategorySlider,
+  Introducation,
+  ProductSlider,
+  TopBanners,
+} from "@/components/Home";
 import styles from "./page.module.scss";
-import { categoryUseCase } from "@/useCases";
+import { categoryUseCase, productUseCase } from "@/useCases";
 
 export default async function Home() {
   const discountedCategory = await categoryUseCase.getDiscountedCategories();
-
+  const discountedProducts = await productUseCase.getDiscountedProducts();
 
   return (
     <main className={styles.main}>
-
       <Introducation
         title="e-commerce"
         description="lorem lorem dasdasdadadd"
@@ -20,6 +24,11 @@ export default async function Home() {
       />
 
       <TopBanners />
+
+      <ProductSlider
+        products={discountedProducts}
+        title="Discounted Products"
+      />
     </main>
   );
 }
