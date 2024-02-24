@@ -1,6 +1,6 @@
 import { getProductsType } from "@/types/product.type";
 
-const toUpdateGetProductsPayload = (payload: getProductsType) => {
+const toUpdateProductsPayload = (payload: getProductsType) => {
   let queryList: any = [];
   Object.entries(payload).map(([key, value]) => {
     if (value) queryList.push(`${key}=${value}`);
@@ -9,5 +9,5 @@ const toUpdateGetProductsPayload = (payload: getProductsType) => {
   return updatedPayload;
 };
 export default {
-  toUpdateGetProductsPayload,
+  toUpdateProductsPayload,
 };

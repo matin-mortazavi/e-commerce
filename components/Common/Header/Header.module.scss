@@ -1,0 +1,7 @@
+.header {
+  padding: space(8) space(16);
+  position: relative;
+  box-shadow: 0 8px 6px -6px var(--color-text-100); /* x-offset y-offset blur spread color */
+  @include flex(row, nowrap, center, space-between);
+  margin-bottom: space(16);
+}

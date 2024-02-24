@@ -1,6 +1,6 @@
 import styles from "./Loading.module.scss";
-
-export default function Loading({ size, color }) {
+   interface loadigType {size : number , color? : string}
+export default function Loading({ size, color } : loadigType) {
   const getSize = () => size && { width: size, height: size };
   const getColor = () => color && { color };
 
